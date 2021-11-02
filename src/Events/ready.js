@@ -38,8 +38,8 @@ module.exports = new Event("ready", (client) => {
 
 
 
-
-    /*
+    function askMathQuestion() {
+        /*
     ----------------------------------------
                 Math Questions
     ----------------------------------------
@@ -78,7 +78,7 @@ module.exports = new Event("ready", (client) => {
         //.setTitle(`${user} has the right answer!`)
         .setDescription("Here is some Supremo-Points!")
 
-    function askMathQuestion() {
+
 
         botChannel.send({embeds: [randomMath]});
         const mmLogger = botChannel.createMessageCollector({maxProcessed: 15000});
@@ -122,7 +122,7 @@ module.exports = new Event("ready", (client) => {
     // 10 minute loop.
     setInterval(askMathQuestion, 600000);
 
-    askMathQuestion(); //this will execute it immediately the first time at start.
+    //askMathQuestion(); //this will execute it immediately the first time at start.
 
 
 
