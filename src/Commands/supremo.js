@@ -103,9 +103,7 @@ module.exports = new Command({
                 //show points
             return message.channel.send({embeds: [showPoints]});
             } else if (args[1] === leaderboard) {
-            console.log(`arg2 should be leaderboard.`);
-            console.log(`arg2 = ${arg2}`);
-            console.log(`check leaderboard score`);
+            message.channel.send(`Coming soon!`);
                 if (!score) {
                     score = {
                         id: `${message.guild.id}-${message.author.id}`,
@@ -116,24 +114,24 @@ module.exports = new Command({
                 }
             console.log(`const top10`);
                 //show leaderboard
-                const top10 = sql.prepare("SELECT * FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;").all(message.guild.id);
+                //const top10 = sql.prepare("SELECT "* FROM scores WHERE guild = ? ORDER BY points DESC LIMIT 10;).all(message.guild.id);
 
                 // Now shake it and show it! (as a nice embed, too!)
             console.log(`const embed`);
-                const leaderboard = new MessageEmbed()
-                    .setTitle("Leader board")
-                    .setAuthor(client.user.username, client.user.avatarURL())
-                    .setDescription("Our top 10 points leaders!")
-                    .setColor(0x00AE86);
-            console.log(`for (const data of top10)`);
-                for (const data of top10) {
-                    leaderboard.addFields({
-                        name: client.users.cache.get(data.user).tag,
-                        value: `(${data.points} Supremo points)`
-                    });
-                }
-            console.log(`sending a embed message.`);
-                message.channel.send({embeds: [leaderboard]});
+            //     const leaderboard = new MessageEmbed()
+            //         .setTitle("Leader board")
+            //         .setAuthor(client.user.username, client.user.avatarURL())
+            //         .setDescription("Our top 10 points leaders!")
+            //         .setColor(0x00AE86);
+            // console.log(`for (const data of top10)`);
+            //     for (const data of top10) {
+            //         leaderboard.addFields({
+            //             name: client.users.cache.get(data.user).tag,
+            //             value: `(${data.points} Supremo points)`
+            //         });
+            //     }
+            // console.log(`sending a embed message.`);
+            //     message.channel.send({embeds: [leaderboard]});
 
             } else if (args[1] === give) {
             console.log(`arg2 should be give.`);
@@ -148,12 +146,12 @@ module.exports = new Command({
                     }
                 }
                 //give points.
-                if (message.author.id !== config.admin_id) return message.reply({embeds: [noPermissions]});
+                if (message.author.id !== config.admin_Id) return message.reply({embeds: [noPermissions]});
 
                 const user = message.mentions.users.first() || client.users.cache.get(args[0]);
                 if (!user) return message.reply("You must mention someone or give their ID!");
 
-                const pointsToAdd = parseInt(args[1], 10);
+                const pointsToAdd = parseInt(args[3], 10);
                 const pointsGivenFailed = new MessageEmbed()
                     .setTitle("Supremo points given succesfully!")
                     .setDescription("You didn't tell me how many points to give...")
@@ -184,7 +182,7 @@ module.exports = new Command({
                     .setDescription(`${user.tag} has received ${pointsToAdd} Supremo points and now stands at ${userScore.points} Supremo points.`)
                     .setColor("GREEN")
 
-                return message.channel.send({embed: [pointsGivenSuccess]});
+                return message.channel.send({embeds: [pointsGivenSuccess]});
             }
         }
 });
