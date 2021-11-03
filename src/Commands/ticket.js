@@ -38,7 +38,7 @@ module.exports = new Command({
 
                     const stopembed = new MessageEmbed()
                         .setTitle(`Thank you for using our modmail system!`)
-                        .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL()}`)
+                        .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL()}`, 'https://github.com/Timtendo12/FarCryDiscordBot')
                         .setColor('ORANGE')
                         .setTimestamp()
                         .setDescription(`
@@ -74,7 +74,7 @@ module.exports = new Command({
                         .setDescription(`Uwu *papi*, i can't overwrite perwms for *hachooo* Nico nico <@&${config.modRoleId}> *niii* ohhh *I am a real sussy* **baka**. ;V;`);
                     const createdLogEmbed = new MessageEmbed()
                         .setTitle(`Modmail created`)
-                        .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL()}`)
+                        .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL()}`, 'https://github.com/Timtendo12/FarCryDiscordBot')
                         .setColor('GREEN')
                         .setTimestamp()
                         .setDescription(`
@@ -83,7 +83,7 @@ module.exports = new Command({
                     const closedLogEmbed = new MessageEmbed()
                         .setTitle(`Modmail closed`)
                         .setColor('RED')
-                        .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL()}`)
+                        .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL()}`, 'https://github.com/Timtendo12/FarCryDiscordBot')
                         .setTimestamp()
                         .setDescription(`
            **User: \`${message.author.tag}\`**
@@ -277,7 +277,7 @@ module.exports = new Command({
                                                     .setTitle(`${log_id} - ${message.author.tag} [${moment().format('L')}]`)
                                                     .setURL(`${data}`)
                                                     .setColor('RED')
-                                                    .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL()}`)
+                                                    .setAuthor(`${message.author.tag}`, `${message.author.displayAvatarURL()}`, 'https://github.com/Timtendo12/FarCryDiscordBot')
                                                     .setTimestamp()
                                                     .setDescription(`
                                                 **User: \`${message.author.tag}\`**
@@ -327,7 +327,8 @@ module.exports = new Command({
                     .setTitle(`To create a modmail.`)
                     .setColor('RED')
                     .setTimestamp()
-                    .setDescription(`send "fc!modmail (reason)" to <@${config.botID}>`);
+                    .setDescription(`send "fc!modmail (reason)" to <@${config.botID}>`)
+                    .setAuthor(`${config.botName}`, `${config.botIcon}`, 'https://github.com/Timtendo12/FarCryDiscordBot')
                 message.reply({embeds: [dmMessage]});
             }
         }
