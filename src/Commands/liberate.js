@@ -50,6 +50,34 @@ module.exports = new Command({
             }
         });
 
+
+            // region generator
+            let regionArray = ["Yara", "Hope County", "Nuked Hope County", "Kyrat", "Rook Islands", "world island"]
+            let regionAntagonist = Math.floor(Math.random() * regionArray.length);
+            let antagonist;
+
+            if (regionAntagonist === 0){
+                antagonist = "Anton Castillo"
+                console.log(`Region: ${regionArray[regionAntagonist]} -> ${antagonist}`);
+            } else if (regionAntagonist === 1){
+                antagonist = "Joseph Seed"
+                console.log(`Region: ${regionArray[regionAntagonist]} -> ${antagonist}`);
+            } else if (regionAntagonist === 2){
+                antagonist = "Louise & Mickey"
+                console.log(`Region: ${regionArray[regionAntagonist]} -> ${antagonist}`);
+            } else if (regionAntagonist === 3){
+                antagonist = "Pagan Min"
+                console.log(`Region: ${regionArray[regionAntagonist]} -> ${antagonist}`);
+            } else if (regionAntagonist === 4){
+                antagonist = "Vaas"
+                console.log(`Region: ${regionArray[regionAntagonist]} -> ${antagonist}`);
+            } else if (regionAntagonist === 5){
+                antagonist = "Colonel Ike Sloan"
+                console.log(`Region: ${regionArray[regionAntagonist]} -> ${antagonist}`);
+            }
+
+
+
             //name generator
             let name1 = ["Pig", "Cow", "Sheep", "Horse", "Butcher", "TV Station", "Supremo", "Santa", "Yara", "Tax-Evasion Proffesionals"];
             let name2 = ["Fucker", "Station", "HQ", "Hooker", "House", "Tower", "Boat", "Hospital", "Rocket", "Zoo"];
@@ -73,6 +101,14 @@ module.exports = new Command({
             let factionsAmount = amountOfFactions[pickAmountOfFactions]; //-> Is the amount of factions the outpost has.
 
             for (let i = 0; i < factionsAmount; i++) {
+                let factionSurname1 = ["Sweet", "Red",  "Crazy",  "Gods", `${antagonist}'s`];
+                let factionSurname2 = [];
+
+                let f1 = Math.floor(Math.random() * factionSurname1.length);
+                let f2 = Math.floor(Math.random() * factionSurname2.length);
+
+                let factionName = `${factionSurname1[f1]} ${factionSurname2[f2]}`
+
 
             }
 
