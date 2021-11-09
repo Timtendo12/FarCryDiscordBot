@@ -109,6 +109,13 @@ module.exports = new Command({
                     if (modmailLimit.has(message.author.id)) {
                         message.channel.send({embeds: [modmailLimitEmbed]})
                     } else {
+                        if (reason.toLowerCase().includes("bug")){
+                            //technical gif for the bug reports
+                            message.channel.send("Bug report successfully sent. Im busy gathering resources and creating a modmail especially for you. This can take a few seconds. \nhttps://media2.giphy.com/media/95QSn2htzlBxyZfZL1/giphy.gif?cid=790b7611004566eb1c9b65abae6f83ae52b3b328bc1cabe7&rid=giphy.gif&ct=g")
+                        }else {
+                            //normal gifs for normal modmails.
+                            message.reply("Modmail request succesfully sent. Please wait a few seconds while we prepare your very own modmail. \nhttps://c.tenor.com/6PL8EY_LUiQAAAAd/mi-gifs.gif");
+                        }
                         const server = client.guilds.cache.get(config.serverId);
                         // const server = client.guilds.get(config.serverId);
                         const channel = await server.channels.create(`FCModmail: ${message.author.tag}`, {
@@ -150,7 +157,29 @@ module.exports = new Command({
 
                         const reactionMessage = await channel.send({embeds: [stopembed]})
                         //----------await channel.send(`<@${message.author.id}> & <@&${config.modRoleId}>`);
-                        //await channel.send(`<@${message.author.id}>`)
+
+                        //checks if the reason is a bug report. If it is. lead them ubisoft support if it is not a discord bot bug report
+                        if (reason.toLowerCase().includes("bug")){
+                            //it's a bug report.
+                            const bugEmbed = new MessageEmbed()
+                                .setTitle("")
+                                .setDescription(`Thank you for taking your time to report a discord bot bug. Please describe your bug using this template ***in github issue:***
+                                
+                            **Bug: **
+                            **Channel: **
+                            **Steps to reproduce: **
+                            **Did the bot go offline/unreactive? ✅ Yes / ❌ No / ❓ I dont know.**
+                            
+                            *github link:* https://github.com/Timtendo12/FarCryDiscordBot/issues
+                            
+                            If you want to report a game bug please use the following link to contact Ubisoft 
+                            https://discussions.ubisoft.com/category/793/player-support?lang=en-US`)
+                                .setColor('ORANGE')
+                                .setAuthor(`${config.botName}`, `${config.botIcon}`, 'https://github.com/Timtendo12/FarCryDiscordBot');
+                                channel.send({embeds: [bugEmbed]});
+                                channel.send(`<@${message.author.id}>`)
+                        } else {
+                        await channel.send(`<@${message.author.id}>`)}
 
                         //-------------------------------
                         //----------Logging--------------
