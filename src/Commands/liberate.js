@@ -2,6 +2,7 @@ const Command = require("../Structures/command.js");
 const config = require("../data/config.json");
 const fs = require('fs');
 const SQLite = require("better-sqlite3");
+const moment = require("moment");
 const sql = new SQLite("C:/Users/Timsl/Documents/FarCryDiscordBot/src/data/supremo.db");
 
 module.exports = new Command({
@@ -39,22 +40,25 @@ module.exports = new Command({
             -----------------------------------------------
              */
 
-        const log_id = (Math.random() + 1).toString(36).substring(7).toUpperCase();
-        const file = `C:/Users/Timsl/Documents/FarCryDiscordBot/src/data/outpostLogs/OP${message.author.tag}_${log_id}_log.txt`
+        const file_id = (Math.random() + 1).toString(36).substring(7).toUpperCase();
+        const file = `C:/Users/Timsl/Documents/FarCryDiscordBot/src/data/outpostLogs/OP_${message.author.tag}_${file_id}_log.txt`
 
-        //First I want to create a file everytime a new modmail gets created.
+        //First I want to create a file everytime a new outpost gets created.
         fs.appendFile(`${file}`, `user: ${message.author.tag} ~ Far Cry outpost liberator made by Timtendo12#2909 VER: ${config.OutpostLiberatorVer}`, err => {
             if (err) {
                 console.error(err)
                 return
             }
         });
+        message.reply("Created a search request. Troops are finding a outpost!");
+        setTimeout(() => console.log(""), 3000);
 
 
             // region generator
             let regionArray = ["Yara", "Hope County", "Nuked Hope County", "Kyrat", "Rook Islands", "world island"]
             let regionAntagonist = Math.floor(Math.random() * regionArray.length);
             let antagonist;
+            message.reply("Region found");
 
             if (regionAntagonist === 0){
                 antagonist = "Anton Castillo"
@@ -76,8 +80,17 @@ module.exports = new Command({
                 console.log(`Region: ${regionArray[regionAntagonist]} -> ${antagonist}`);
             }
 
+        fs.appendFile(`${file}`, `\nRegion: [${regionAntagonist}] - [${antagonist}]\n`, err => {
+            if (err) {
+                console.error(err)
+                message.reply(`Failed to log region + region antagonist. ${regionAntagonist}, ${antagonist} by: ${message.author.id}`);
+                return;
+            }
+        });
+        message.reply("Region location locked!");
 
 
+        message.reply("Finding outpost.");
             //name generator
             let name1 = ["Pig", "Cow", "Sheep", "Horse", "Butcher", "TV Station", "Supremo", "Santa", "Yara", "Tax-Evasion Proffesionals"];
             let name2 = ["Fucker", "Station", "HQ", "Hooker", "House", "Tower", "Boat", "Hospital", "Rocket", "Zoo"];
@@ -88,30 +101,42 @@ module.exports = new Command({
             let outpostName = `${name1[wordName1]} ${name2[wordName2]}`
             console.log(`Outpost name = ${outpostName}`);
 
+            message.reply("Uncaptured outpost found!");
+
             //---------------------------------------------------------------------------------
 
             //Factions generator.
 
             //Factions are different buildings in the outpost were different events happens.
-
+            message.reply("Counting factions.");
             const amountOfFactions = [2, 3, 4, 5, 6, 7, 8];
 
             //picks a random number
-            let pickAmountOfFactions = Math.floor(Math.random() * factionsAmount.length);
+            let pickAmountOfFactions = Math.floor(Math.random() * amountOfFactions.length);
             let factionsAmount = amountOfFactions[pickAmountOfFactions]; //-> Is the amount of factions the outpost has.
 
-            for (let i = 0; i < factionsAmount; i++) {
-                let factionSurname1 = ["Sweet", "Red",  "Crazy",  "Gods", `${antagonist}'s`];
-                let factionSurname2 = [];
+            for (let i = 0; i < factionsAmount;) {
+                let factionSurname1 = ["Sweet", "Red", "Crazy", "God's", `${antagonist}'s`, "Dick's", "Aunty Joe's"];
+                let factionSurname2 = ["Bakery", "Stripclub", "Butcher", "Worksbench", "Tittie Enlarger", "Fried Genitals pawn shop", "Arcade"];
 
                 let f1 = Math.floor(Math.random() * factionSurname1.length);
                 let f2 = Math.floor(Math.random() * factionSurname2.length);
 
                 let factionName = `${factionSurname1[f1]} ${factionSurname2[f2]}`
 
-
+                //when a faction is generated it writes the name to the corresponding file.
+                setTimeout(() => console.log(`${i}, ${factionName}`), 5000);
+                fs.appendFile(`${file}`, `\nFaction ${i}: ${factionName}`, err => {
+                    if (err) {
+                        console.error(err)
+                        message.reply(`Failed to log faction. fId: ${factionsAmount}, ${factionName} || 1: ${f1} 2: ${f2} by: ${message.author.id}`);
+                        return;
+                    }
+                });
+                i++
+                setTimeout(() => console.log(`${i}, ${factionName}`), 5000);
             }
-
+            message.reply(`Succesfully found ${factionsAmount} factions.`);
 
             function outpostLiberate() {
                 console.log("weeee");
