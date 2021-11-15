@@ -45,7 +45,7 @@ Made with these packages. (And my love <3 )
 * [Better-SQLite3](https://www.npmjs.com/package/better-sqlite3)
 * [pastebin-js](https://www.npmjs.com/package/pastebin-js)
 * [twitter-lite](https://www.npmjs.com/package/twitter-lite)
-* [https://www.npmjs.com/package/moment](https://laravel.com)
+* [moment](https://www.npmjs.com/package/moment)
 * [node-gyp](https://www.npmjs.com/package/node-gyp)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
