@@ -77,7 +77,7 @@ Quick overlook on how to install the scripts on your computer.
    ```sh
    npm install [package]
    ```
-4. Enter your token & API information in `src/data/config.js`
+4. Enter your token & API information in `src/data/config.json`
    * [raw](https://pastebin.com/raw/M6UuTFdL)
    ```
    check raw for raw file format.
