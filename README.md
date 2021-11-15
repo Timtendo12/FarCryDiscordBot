@@ -79,7 +79,7 @@ Quick overlook on how to install the scripts on your computer.
    ```
 4. Enter your token & API information in `src/data/config.js`
    * [raw](https://pastebin.com/raw/M6UuTFdL)
-   ```js
+   ```
    check raw for raw file format.
    ```
 
