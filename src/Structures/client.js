@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 
-const Command = require("./Command.js");
+const Command = require("./command.js");
 
 const Event = require("./Event.js");
 
-const config = require("../data/config.json");
+const config = require("../../../../Documents/FarCryDiscordBot/src/data/config.json");
 
 const fs = require("fs");
 

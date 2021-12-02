@@ -1,0 +1,4 @@
+user: Timtendo12#2909 ~ Far Cry outpost liberator made by Timtendo12#2909 VER: Alpha_V1.0
+Region: [2] - [Louise & Mickey]
+
+Faction 1: Red Worksbench

@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Client = require("./Client.js");
+const Client = require("./client.js");
 /**
  *
  * @param {Discord.Message} message
