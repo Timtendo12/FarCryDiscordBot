@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-const Command = require("./Command.js");
+const Command = require("./command.js");
 
 const Event = require("./Event.js");
 
@@ -8,14 +8,6 @@ const config = require("../data/config.json");
 
 const fs = require("fs");
 
-//const intents = [ Discord.Intents.FLAGS.GUILD_MEMBERS,
-//    Discord.Intents.FLAGS.GUILD_MESSAGES,
-//    Discord.Intents.FLAGS.GUILDS,
-//    Discord.Intents.FLAGS.GUILD_BANS,
-//    Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-//    Discord.Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
-//    Discord.Intents.FLAGS.DIRECT_MESSAGES,
-//    Discord.Intents.FLAGS.DIRECT_MESSAGE_TYPING]
 const intents = new Discord.Intents(32767);
 
 class Client extends Discord.Client {

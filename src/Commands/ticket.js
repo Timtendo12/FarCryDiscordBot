@@ -362,4 +362,3 @@ module.exports = new Command({
             }
         }
     });
-

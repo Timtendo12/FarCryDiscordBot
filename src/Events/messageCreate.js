@@ -338,6 +338,26 @@ module.exports = new Event("messageCreate", (Client, Message,) => {
     //    talkedRecently.delete(Message.author.id);
     //  }, 60000); //FC6AACoolDown = parsed from VAR which gets the info from the config.json
 
+    //funny messages
+    if (Message.channel.type === "DM"){
+        if(Message.content.toLowerCase().includes("do you know the definition of insanity?")){
+            Message.reply("https://c.tenor.com/wPU4lAxZdywAAAAd/did-i-ever-told-you-definition-of-insanity.gif");
+            Message.reply("https://c.tenor.com/nXOMqLCjYwIAAAAC/vaas-definitionofinsanity.gif");
+            Message.reply("https://memegenerator.net/img/instances/31237894.jpg");
+            Message.reply("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOH")
+            Message.reply("THE DEFINITION OF INSANITYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY")
+            Message.reply("WEWEWOWOEWEOWOEWOEOWOEOWEOWOEOWOEWOEOWOEOWOEWOEWOEOWEOWEOWOEWOE")
+            Message.reply("Cuddle's doesn't know this is in the bot since: 15 DEC, 2021");
+            Message.reply("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv-6WDCouQgyerD3o1O6PY1y9t-TfxtPOB6Q&usqp=CAU")
+        } else {
+            const dmEmbed = new MessageEmbed()
+                .setTitle(`Thank you for sending me a message.`)
+                .setDescription(`If you need help you can create a modmail by executing the command: fc!modmail (reason)`)
+                .setAuthor(`${config.botName}`, `${config.botIcon}`, `${config.botGitHub}`)
+            Message.reply({embeds: []})
+        }
+    }
+
 
 // checks if the message starts with the prefix.
     if (!Message.content.startsWith(config.prefix)) return;
