@@ -13,7 +13,7 @@ let FC6AACoolDown = parseInt(config.FC6AACooldown);
 module.exports = new Event("messageCreate", (Client, Message,) => {
 
     //cooldown
-    console.log("Before checking if the author is in cooldown");
+    //console.log("Before checking if the author is in cooldown");
     if (talkedRecently.has(Message.author.id)) {
         return;
         //Message.channel.send("Tim's Debug: Ignoring this guy. (this message wont be shown in the final product");

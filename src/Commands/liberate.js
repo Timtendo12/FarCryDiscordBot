@@ -115,7 +115,7 @@ module.exports = new Command({
             let pickAmountOfFactions = Math.floor(Math.random() * amountOfFactions.length);
             let factionsAmount = amountOfFactions[pickAmountOfFactions]; //-> Is the amount of factions the outpost has.
 
-            for (let i = 0; i < factionsAmount;) {
+            for (let i = 1; i < factionsAmount;) {
                 let factionSurname1 = ["Sweet", "Red", "Crazy", "God's", `${antagonist}'s`, "Dick's", "Aunty Joe's"];
                 let factionSurname2 = ["Bakery", "Stripclub", "Butcher", "Worksbench", "Tittie Enlarger", "Fried Genitals pawn shop", "Arcade"];
 

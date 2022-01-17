@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Timtendo12/FarCryDiscordBot">
-    <img src="https://styles.redditmedia.com/t5_2st42/styles/communityIcon_wbrjd9fdoqq61.jpg?width=256&s=9d6385c26e9e4d7ebfe114473e4a8f78f10ac78d" alt="Logo" width="80" height="80">
+    <img src="https://external-preview.redd.it/R1ewshaWQVxbhTFlsPbUQ-M5ILWeYzbFV0HBtDpDC9w.jpg?auto=webp&s=5ba481082841f2b8f94485d077fe605534263014" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Far Cry Discord bot.</h3>
