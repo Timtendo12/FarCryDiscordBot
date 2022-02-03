@@ -1,14 +1,14 @@
 const Discord = require("discord.js");
-
 const Command = require("./command.js");
-
 const Event = require("./Event.js");
-
-const config = require("../../../../Documents/FarCryDiscordBot/src/data/config.json");
-
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v9');
+const config = require("../data/config.json");
 const fs = require("fs");
-
 const intents = new Discord.Intents(32767);
+
+const commands = [];
+const rest = new REST({ version: '9' }).setToken(config.token);
 
 class Client extends Discord.Client {
     constructor() {
@@ -45,9 +45,24 @@ class Client extends Discord.Client {
                   * @type {Event}
                   */
                  const event = require(`../Events/${file}`);
-                console.log(`Event ${`event.event`} loaded successfully`);
+                console.log(`Event ${event.event} loaded successfully`);
                 this.on(event.event, event.run.bind(null, this));
              });
+
+        (async () => {
+            try {
+                console.log('Started refreshing application (/) commands.');
+
+                await rest.put(
+                    Routes.applicationCommands(config.botID),
+                    { body: commands },
+                );
+
+                console.log('Successfully reloaded application (/) commands.');
+            } catch (error) {
+                console.error(error);
+            }
+        })();
 
          this.login(token);
     }

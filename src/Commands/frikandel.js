@@ -1,7 +1,5 @@
 const Command = require("../Structures/command.js");
-const Discord = require("discord.js");
 const config = require("../data/config.json");
-const {GuildChannel} = require("discord.js");
 
 module.exports = new Command({
     name: "frikandel",
