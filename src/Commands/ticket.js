@@ -2,6 +2,8 @@
 //-------------Start-------------
 //-------------------------------
 
+//This ticket system is currently being rewritten, please ignore this mess. LMAO.
+
 
 const PasteClient = require('pastebin-js')
 const config = require("../data/config.json")
