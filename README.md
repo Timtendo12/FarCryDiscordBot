@@ -147,7 +147,7 @@ Project Link: [https://github.com/Timtendo12/FarCryDiscordBot](https://github.co
 * [NodeJS](https://nodejs.org/en/)
 * [Jetbrains](https://www.jetbrains.com/webstorm/)
 * [DiscordAPI](https://discord.com/developers/docs/intro)
-* [Hetzner Server Hosting.](https://www.hetzner.com/)
+* [PebbelHost](https://www.pebblehost.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
