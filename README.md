@@ -11,7 +11,7 @@
 
 
 
-![visitors](https://visitor-badge.glitch.me/badge?page_id=Timtendo12.timtendo12&left_color=yellow&right_color=red) ![maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg) ![issues](https://badgen.net/github/issues/Timtendo12/FarCryDiscordBot) ![LIC](https://img.shields.io/github/license/Timtendo12/FarCryDiscordBot.svg) ![forks](https://badgen.net/github/contributors/Timtendo12/FarCryDiscordBot)<br>![discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white) ![js](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=Timtendo12.timtendo12&left_color=yellow&right_color=red) ![maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg) ![issues](https://badgen.net/github/issues/Timtendo12/FarCryDiscordBot) ![LIC](https://img.shields.io/github/license/Timtendo12/FarCryDiscordBot.svg) ![forks](https://badgen.net/github/contributors/Timtendo12/FarCryDiscordBot)<br>![discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white) ![js](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) [![CodeFactor](https://www.codefactor.io/repository/github/timtendo12/farcrydiscordbot/badge)](https://www.codefactor.io/repository/github/timtendo12/farcrydiscordbot)
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
