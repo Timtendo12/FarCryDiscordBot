@@ -460,4 +460,7 @@ $RECYCLE.BIN/
 # and uncomment the following lines
 # .pnp.*
 
+#Data
+src/data/config.json
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,node,webstorm+all,webstorm+iml,webstorm,yarn
