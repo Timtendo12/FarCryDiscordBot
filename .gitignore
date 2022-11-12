@@ -480,5 +480,6 @@ $RECYCLE.BIN/
 /src/data/*.json
 src/data/*.json
 ./src/data/*.json
+src/data/*
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,node,webstorm+all,webstorm+iml,webstorm,yarn
