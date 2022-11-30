@@ -9,12 +9,13 @@ const client = new Client({
     partials: [User, Message, GuildMember, ThreadMember]
 });
 
-const { LoadEvents } = require("./Handlers/eventHandler");
+const { loadEvents } = require("./Handlers/eventHandler");
 
 client.config = require("./data/config.json");
 client.events = new Collection();
+client.commands = new Collection();
 
-LoadEvents(client);
+loadEvents(client);
 
 client.login(client.config.token)
 

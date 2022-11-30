@@ -4,7 +4,8 @@
   "description": "New version of the Far Cry Discord Bot",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "juan-dev": "nodemon .",
+    "juan-prod": "node ."
   },
   "repository": {
     "type": "git",
